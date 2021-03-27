@@ -1,15 +1,22 @@
-import React from 'react';
-import './App.css';
-import InvoiceApp from './Components/InvoiceApp.js';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-        <div className="container">
-          <InvoiceApp></InvoiceApp>
-        </div>
-    </div>
-  );
+import logo from './logo.svg';
+import './App.css';
+import Home from './Components/Home';
+
+class App extends Component {
+  render(){
+        return(
+            <Router>
+                <div>
+                      <Switch>
+                        <Route exact path="/" component={Home}/>
+                      </Switch>
+                </div>
+            </Router>
+        )
+    }
 }
 
 export default App;
